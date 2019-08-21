@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Finding employee</title>
+</head>
+<body>
+<div th:object="${result}">
+	    Emp id: <div th:text="*{empId}"></div>
+		Name: <div th:text="*{name}"></div>
+		City:<div th:text="*{city}"> </div>
+		Salary<div th:text="*{salary}"></div>
+		</div>
+</body>
+</html>
