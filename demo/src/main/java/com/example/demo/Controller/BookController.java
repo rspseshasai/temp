@@ -69,7 +69,7 @@ public class BookController {
 		if (book == null) {
 			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 		}
-		book.setUpdatedDate(new Date());
+		currentBook.setUpdatedDate(new Date());
 		bookService.update(currentBook);
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Book {
 
 	@Id
-	@JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_id")
     private Long id;
@@ -39,7 +38,7 @@ public class Book {
 
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "user_id")//, nullable = false)
+	@JoinColumn(name = "user_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private User user;   
