@@ -1,0 +1,15 @@
+package sample1.jsonparser;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Simple Json Parser" );
+        JsonParser jp = new JsonParser();
+        jp.parse();
+    }
+}
