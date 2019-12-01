@@ -19,3 +19,11 @@ public class ConnectionDemo {
 
 
     }
+String sql = "CREATE TABLE REGISTRATION "
+                    + "(id INTEGER not NULL, "
+                    + " first VARCHAR(255), "
+                    + " last VARCHAR(255), "
+                    + " age INTEGER, "
+                    + " PRIMARY KEY ( id ))";
+
+            stmt.executeUpdate(sql);
