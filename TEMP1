@@ -1,0 +1,1 @@
+Not in use. The length of time that callers waited in queue and ringing at an agent's telephone before abandoning the call. For phantom abandons, ABNTIME includes the total time until the agent releases the call.\nThis is a cumulative item. [pg 148]
