@@ -4,7 +4,6 @@ Not in use. The length of time that callers waited in queue and ringing at an ag
 
 
 
-
 package Anagrams;
 
 import java.util.*;
@@ -38,25 +37,23 @@ public class FindAnagrams {
         List<String> inp = new ArrayList<>();
 
         inp.add("code");
+        inp.add("aaagmnrs");
+        inp.add("anagrams");
         inp.add("doce");
-        inp.add("ecod");
-        inp.add("farmer");
-        inp.add("frame");
-
         List<String> res = removeDupAnagrams(inp);
+
+        for (int i=0;i<res.size();i++){
+            System.out.println(res.get(i));
+        }
     }
 
     private static List<String> removeDupAnagrams(List<String> inp) {
 
-        int i = 0, j = 1;
-        while (j < inp.size()) {
-
-            if (isAnagram(inp.get(i), inp.get(j))) {
-                inp.remove(j);
-            } else {
-
-                i = j;
-                j++;
+        for(int i=0;i<inp.size();i++){
+            for(int j=i+1;j<inp.size();j++){
+                if(isAnagram(inp.get(i), inp.get(j))){
+                    inp.remove(j);
+                }
             }
         }
         Collections.sort(inp);
