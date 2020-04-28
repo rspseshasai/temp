@@ -1,1 +1,66 @@
 Not in use. The length of time that callers waited in queue and ringing at an agent's telephone before abandoning the call. For phantom abandons, ABNTIME includes the total time until the agent releases the call.\nThis is a cumulative item. [pg 148]
+
+
+
+
+
+
+package Anagrams;
+
+import java.util.*;
+
+public class FindAnagrams {
+
+    static boolean isAnagram(String anagram1, String anagram2) {
+
+        int arr_ana1[] = new int[256];
+        Arrays.fill(arr_ana1, 0);
+        int arr_ana2[] = new int[256];
+        Arrays.fill(arr_ana2, 0);
+        int i;
+
+        for (i = 0; i < anagram1.length() && i < anagram2.length();
+             i++) {
+            arr_ana1[anagram1.charAt(i)]++;
+            arr_ana2[anagram2.charAt(i)]++;
+        }
+        if (anagram1.length() != anagram2.length())
+            return false;
+        for (i = 0; i < 256; i++)
+            if (arr_ana1[i] != arr_ana2[i])
+                return false;
+
+        return true;
+    }
+
+
+    public static void main(String[] args) {
+        List<String> inp = new ArrayList<>();
+
+        inp.add("code");
+        inp.add("doce");
+        inp.add("ecod");
+        inp.add("farmer");
+        inp.add("frame");
+
+        List<String> res = removeDupAnagrams(inp);
+    }
+
+    private static List<String> removeDupAnagrams(List<String> inp) {
+
+        int i = 0, j = 1;
+        while (j < inp.size()) {
+
+            if (isAnagram(inp.get(i), inp.get(j))) {
+                inp.remove(j);
+            } else {
+
+                i = j;
+                j++;
+            }
+        }
+        Collections.sort(inp);
+        return inp;
+    }
+
+}
